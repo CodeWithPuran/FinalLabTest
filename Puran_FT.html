@@ -44,14 +44,14 @@ Number of cols: <input type="text" id="t2" /><br><br>
         addColumnButton.style.marginRight = "auto"; // Align the button to the center horizontally
         document.body.appendChild(addColumnButton); // Append the "Add Column" button to the body
 
-        // var addRowButton = document.createElement("button");
-        // addRowButton.textContent = "Add Row";
-        // addRowButton.onclick = addRow;
-        // addRowButton.style.margin = "10px"; // Add margin below the table
-        // addRowButton.style.display = "block"; // Display the button as block element
-        // addRowButton.style.marginLeft = "auto"; // Align the button to the center horizontally
-        // addRowButton.style.marginRight = "auto"; // Align the button to the center horizontally
-        // document.body.appendChild(addRowButton); // Append the "Add Row" button to the body
+        var addRowButton = document.createElement("button");
+        addRowButton.textContent = "Add Row";
+        addRowButton.onclick = addRow;
+        addRowButton.style.margin = "10px"; // Add margin below the table
+        addRowButton.style.display = "block"; // Display the button as block element
+        addRowButton.style.marginLeft = "auto"; // Align the button to the center horizontally
+        addRowButton.style.marginRight = "auto"; // Align the button to the center horizontally
+        document.body.appendChild(addRowButton); // Append the "Add Row" button to the body
     }
 
     // Function to add a column to the table
@@ -68,21 +68,21 @@ Number of cols: <input type="text" id="t2" /><br><br>
         }
     }
 
-    // // Function to add a row to the table
-    // function addRow() {
-    //     var table = document.querySelector("table");
-    //     var newRow = table.insertRow();
+    // Function to add a row to the table
+    function addRow() {
+        var table = document.querySelector("table");
+        var newRow = table.insertRow();
 
-    //     var cols = table.rows[0].cells.length;
+        var cols = table.rows[0].cells.length;
 
-    //     for (var i = 0; i < cols; i++) {
-    //         var cell = newRow.insertCell();
-    //         var cellName = "(" + (table.rows.length - 1) + "," + i + ")"; // Generate cell name
-    //         cell.appendChild(document.createTextNode(cellName)); // Add cell name to cell
-    //         cell.style.border = "1px solid black"; // Add border styling to cell
-    //         cell.style.padding = "10px"; // Add padding for spacing
-    //     }
-    // }
+        for (var i = 0; i < cols; i++) {
+            var cell = newRow.insertCell();
+            var cellName = "(" + (table.rows.length - 1) + "," + i + ")"; // Generate cell name
+            cell.appendChild(document.createTextNode(cellName)); // Add cell name to cell
+            cell.style.border = "1px solid black"; // Add border styling to cell
+            cell.style.padding = "10px"; // Add padding for spacing
+        }
+    }
 
 
 </script>
